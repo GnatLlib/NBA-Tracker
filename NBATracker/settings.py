@@ -28,7 +28,7 @@ SECRET_KEY = '0ml+e3q14k(%g&z+l5!2&7+1$%zm1e#_b$uz-nvi6u@1%pib)='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://nbatracker.herokuapp.com/']
+ALLOWED_HOSTS = ['nbatracker.herokuapp.com' ]
 
 
 # Application definition
