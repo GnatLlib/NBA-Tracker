@@ -1,1 +1,1 @@
-web: gunicorn NBATracker.wsgi --log-file -
+web: waitress-serve --port=$PORT {NBATracker}.wsgi:application
