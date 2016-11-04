@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT {NBATracker}.wsgi:application
+web: waitress-serve --port=$PORT NBATracker.wsgi:application
