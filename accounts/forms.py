@@ -31,9 +31,9 @@ class UserLoginForm(forms.Form):
 
 class UserRegisterForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' Username'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' Email Address'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' Confirm Email'}))
     password = forms.CharField(widget = forms.PasswordInput(attrs={'placeholder': ' Password'}))
-    email2 = forms.EmailField(widget=forms.TextInput(attrs={'placeholder':' Confirm Email'}))
+    email2 = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' Email Adress'}))
 
     class Meta:
         model = User
