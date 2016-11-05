@@ -82,17 +82,19 @@ WSGI_APPLICATION = 'NBATracker.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'nbatracker',
         'USER': 'postgres',
         'PASSWORD': '970118tawny',
-        'HOST': 'localhost',
-        'PORT': '',
+
 
     }
 }
 
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -141,5 +143,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
