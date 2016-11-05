@@ -20,7 +20,7 @@ def register_view(request):
         user.set_password(password)
         user.save()
         login(request, user)
-        return redirect("/")
+        return redirect("/profile")
     return render(request, "register.html", {"form":form})
 
 

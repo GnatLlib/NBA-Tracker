@@ -37,12 +37,14 @@
 				<form method = 'POST' action = '' enctype='multipart/form-data'>
 				{%csrf_token%}
 				
-				{{form.username|add_class:"entry"}} <br>
-				{{form.username.errors}}
-				{{form.email|add_class:"entry"}} <br>
-				{{form.email.errors}}
-				{{form.password|add_class:"entry"}} <br>
-				{{form.password.errors}}
+				{{form.username|add_class:"entry"}}<br>
+                <div style="color:red;">{{form.username.errors.as_text}}</div>
+				{{form.email2|add_class:"entry"}}<br>
+                <div style="color:red;">{{form.email2.errors.as_text}}</div>
+                    {{form.email|add_class:"entry"}} <br>
+                    <div style="color:red;">{{form.email.errors.as_text}}</div>
+                    {{form.password|add_class:"entry"}} <br>
+                <div style="color:red;">{{form.password.errors.as_text}}</div>
 				
 				<input type="submit" class = "press" value="Create Account">
 				

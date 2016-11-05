@@ -33,14 +33,26 @@ class UserRegisterForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' Username'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' Email Address'}))
     password = forms.CharField(widget = forms.PasswordInput(attrs={'placeholder': ' Password'}))
+    email2 = forms.EmailField(widget=forms.TextInput(attrs={'placeholder':' Confirm Email'}))
 
     class Meta:
         model = User
         fields = [
             'username',
+            'email2',
             'email',
-            'password'
+            'password',
         ]
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        email2 = self.cleaned_data.get('email2')
+        if email != email2:
+            raise forms.ValidationError("Emails must match")
+        email_qs = User.objects.filter(email=email)
+        if email_qs.exists():
+            raise forms.ValidationError("This email has already been registered")
+        return email
 
 
 
