@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+import datetime
 
 # Create your models here.
 
@@ -19,7 +21,10 @@ class QuarterScore(models.Model):
     t2_q4 = models.IntegerField()
     t2_total = models.IntegerField()
 
+    game_id = models.IntegerField(primary_key=True)
+    game_date = models.DateTimeField(default=datetime.datetime.now(), blank=True)
+
     def __str__(self):
-        return str(self.id)
+        return str(self.game_id)
 
 

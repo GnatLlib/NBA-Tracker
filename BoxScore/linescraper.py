@@ -6,8 +6,8 @@ from .game import Game
 def getgames():
     date = datetime.datetime.now()
     # if it is before 6pm, use yesterday's date
-    if date.hour < 18:
-        date = datetime.datetime.now() - datetime.timedelta(1)
+    #if date.hour < 18:
+        #date = datetime.datetime.now() - datetime.timedelta(1)
 
     # format url to grab data from
     url = "http://stats.nba.com/stats/scoreboardV2?DayOffset=0&LeagueID=00&gameDate={}%2F{}%2F{}".format(date.month,
