@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from home import views as home_views
-from accounts.views import (register_view, logout_view, profile_view)
+from accounts.views import (register_view, logout_view, profile_view, allgames_view)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^$', home_views.index, name="index"),
     url(r'^logout/', logout_view, name="logout"),
     url(r'^register/', register_view, name="register"),
-    url(r'^profile/', profile_view, name="profile")
-
+    url(r'^profile/', profile_view, name="profile"),
+    url(r'^allgames/', allgames_view, name = "allgames"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

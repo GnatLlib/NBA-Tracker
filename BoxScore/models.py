@@ -22,7 +22,7 @@ class QuarterScore(models.Model):
     t2_total = models.IntegerField()
 
     game_id = models.IntegerField(primary_key=True)
-    game_date = models.DateTimeField(default=datetime.datetime.now(), blank=True)
+    game_date = models.DateField(blank=True)
 
     def __str__(self):
         return str(self.game_id)
