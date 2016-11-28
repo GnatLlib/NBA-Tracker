@@ -40,7 +40,7 @@
 			<h1 class="logo"><a href="/logout">Logout</a></h1>
 			<i class="icon-remove menu-close"></i>
 			<a href="#home" class="smoothScroll">Home</a>
-			<a href="#about" class="smoothScroll">Recent Games</a>
+			<a href="/profile" class="smoothScroll">Recent Games</a>
 			<a href="#"><i class="icon-facebook"></i></a>
 			<a href="#"><i class="icon-twitter"></i></a>
 			<a href="#"><i class="icon-dribbble"></i></a>
@@ -85,15 +85,17 @@
 
 					{% if scorelines %}
 						{% for date in scorelines %}
-							<p> {{date.0}} </p>
+							<h3> {{date.0}} </h3>
+                            <br>
 
-							<div class="col-sm-6 col-sm-offset-0">
 							{%for line in date.1%}
-								<P> {{line.team_1}}</P>
-								<p> {{line.team_2}}</p>
+								<P> {{line.team_1}} {{line.t1_q1}} {{line.t1_q2}} {{line.t1_q3}} {{line.t1_q4}} {{line.t1_total}}</P>
+                                <p> {{line.team_2}} {{line.t2_q1}} {{line.t2_q2}} {{line.t2_q3}} {{line.t2_q4}} {{line.t2_total}}</p>
+
+                                <br>
 							{%endfor%}
-							<br>
-							</div>
+
+
 						{%endfor%}
 
 
