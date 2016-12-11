@@ -16,7 +16,7 @@ def getgames():
 
     # format url to grab data from
 
-    
+
 
     url = "http://stats.nba.com/stats/scoreboardV2?DayOffset=0&LeagueID=00&gameDate={}%2F{}%2F{}".format(date.month,
                                                                                                          date.day,
